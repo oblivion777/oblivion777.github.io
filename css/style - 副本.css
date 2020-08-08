@@ -541,9 +541,8 @@ nav i.icon-basic-eye {
 	top: 5px;
 	margin-right: 5px;
 }
-
 .navbar-inner {
-	background-color: #ffffff77;
+	background-color: transparent;
 	-webkit-transition: background-color 400ms linear;
 	-moz-transition: background-color 400ms linear;
 	-o-transition: background-color 400ms linear;
@@ -553,32 +552,6 @@ nav i.icon-basic-eye {
 	border:none;
 	border-bottom: none;
 }
-/*动画*/
-@keyframes reminAnimation{
-	25% { opacity: 0; }
-    50% { opacity: 1; }
-    75% { opacity: 0; }
-	100% { opacity: 1; }
-}
-div.navbar-inner {
-    animation:reminAnimation 12s infinite ease-in-out forwards;
-}
-.navbar-inner:hover {
-	background-color: #ffffffdd;
-	-webkit-transition: background-color 400ms linear;
-	-moz-transition: background-color 400ms linear;
-	-o-transition: background-color 400ms linear;
-	-ms-transition: background-color 400ms linear;
-	transition: background-color 400ms linear;
-	z-index:10;
-	border:none;
-    border-bottom: none;
-    animation:reminAnimationHover 3s 1 ease-in-out forwards;
-}
-@keyframes reminAnimationHover{
-	to { opacity: 1; }
-}
-/*   ====   */
 #blog-post .navbar-inner {
 	background-color: #fff;
 	background-color: rgba(255,255,255,.9);
