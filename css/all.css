@@ -36,7 +36,7 @@
 
         @keyframes star-pos {
             0% {
-                transform: scale(1.5) rotate(0) translate3d(100vw, 50vw, 0);
+                transform: scale(1.5) rotate(0) translate3d(60vw, 30vw, 0);
 
             }
 
@@ -59,7 +59,7 @@
             position: fixed;
 
             transform-origin: 0% 50%;
-            animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+            animation: star-opacity 2.5s infinite ease-in, star-pos 2.5s infinite ease-in;
             /*头部阴影*/
             box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
 
