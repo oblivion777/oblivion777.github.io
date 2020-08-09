@@ -13,6 +13,113 @@
 /* Slidebars 0.10.2 (http://plugins.adchsm.me/slidebars/) written by Adam Smith (http://www.adchsm.me/) released under MIT License (http://plugins.adchsm.me/slidebars/license.txt) */
 #sb-site,.sb-site-container,.sb-slidebar,body,html{margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body,html{width:100%;overflow-x:hidden}html{height:100%}body{min-height:100%;height:auto;position:relative}html.sb-scroll-lock.sb-active:not(.sb-static){overflow:hidden}#sb-site,.sb-site-container{width:100%;position:relative;z-index:1}.sb-slidebar{height:100%;overflow-y:auto;position:fixed;top:0;z-index:0;display:none;background-color:#222;-webkit-transform:translate(0px)}.sb-left{left:0}.sb-right{right:0}.sb-slidebar.sb-static,html.sb-static .sb-slidebar{position:absolute}.sb-slidebar.sb-active{display:block}.sb-style-overlay{z-index:9999}.sb-momentum-scrolling{-webkit-overflow-scrolling:touch}.sb-slidebar{width:30%}.sb-width-thin{width:15%}.sb-width-wide{width:45%}@media (max-width:480px){.sb-slidebar{width:70%}.sb-width-thin{width:55%}.sb-width-wide{width:85%}}@media (min-width:481px){.sb-slidebar{width:55%}.sb-width-thin{width:40%}.sb-width-wide{width:70%}}@media (min-width:768px){.sb-slidebar{width:40%}.sb-width-thin{width:25%}.sb-width-wide{width:55%}}@media (min-width:992px){.sb-slidebar{width:30%}.sb-width-thin{width:15%}.sb-width-wide{width:45%}}@media (min-width:1200px){.sb-slidebar{width:20%}.sb-width-thin{width:5%}.sb-width-wide{width:35%}}#sb-site,.sb-site-container,.sb-slide,.sb-slidebar{-webkit-transition:-webkit-transform 400ms ease;-moz-transition:-moz-transform 400ms ease;-o-transition:-o-transform 400ms ease;transition:transform 400ms ease;-webkit-transition-property:-webkit-transform,left,right}.sb-hide{display:none}
 @charset "utf-8";
+
+/**/
+
+        @keyframes star-opacity {
+            0% {
+                opacity: 0
+            }
+
+            40% {
+                opacity: 1
+            }
+
+            60% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @keyframes star-pos {
+            0% {
+                transform: scale(1.5) rotate(0) translate3d(100vw, 50vw, 0);
+
+            }
+
+            100% {
+                transform: scale(0) rotate(0) translate3d(0, 0, 0);
+            }
+        }
+
+        div.star {
+
+            display: block;
+            /*圆形大小*/
+            width: 5px;
+            height: 5px;
+            /*画圆*/
+            border-radius: 50%;
+            background: #fff;
+            top: 100px;
+            left: 0px;
+            position: fixed;
+
+            transform-origin: 0% 50%;
+            animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+            /*头部阴影*/
+            box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+
+            opacity: 0;
+            z-index: 2
+        }
+
+        div.shineStars {
+            display: block;
+            /*圆形大小*/
+            width: 5px;
+            height: 5px;
+            /*画圆*/
+            border-radius: 50%;
+            background: #fff;
+            top: 100px;
+            left: 0px;
+            position: fixed;
+
+            transform-origin: 0% 50%;
+            animation: star-opacity 5s infinite ease-in;
+            /*头部阴影*/
+            box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+
+            opacity: 0;
+            z-index: 2
+        }
+
+        .star:after {
+            content: '';
+            display: block;
+            top: 0;
+            left: 4px;
+            border: 0 solid #fff;
+            /*尾宽 长(边框厚度 上,左右,下)*/
+            border-width: 0 280px 2px;
+            border-color: transparent transparent transparent rgba(255, 255, 255, .3);
+
+            /*尾角度*/
+            transform: rotate(27deg) translate3d(0px, 0px, 0);
+
+            box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+
+            transform-origin: 0% 100%
+        }
+
+        .reminFrame {
+			
+            width: 100%;
+            height: 100%;
+        }
+
+        div.remin-if-top {
+            border-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+/*======================================================================*/
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -570,12 +677,12 @@ nav i.icon-basic-eye {
 /*动画*/
 @keyframes reminAnimation{
 	25% { opacity: 0; }
-    50% { opacity: 1; }
+    50% { opacity: 0; }
     75% { opacity: 0; }
 	100% { opacity: 1; }
 }
 div.navbar-inner {
-    animation:reminAnimation 12s infinite ease-in-out forwards;
+    animation:reminAnimation 8s infinite ease-in-out forwards;
 }
 .navbar-inner:hover {
 	background-color: #ffffffdd;
