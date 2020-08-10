@@ -186,7 +186,7 @@
 
 <p>这段代码原本是想用于接收用户输入并判断输入是否合法,如果输入不合法则调用自己让用户重新输入一次数据.结果输入字符串时造成死循环 然后爆栈…</p>
 <p>于是进入调试模式查找问题.</p>
-<p><img src="https://oblivion777.github.io/blogimg/debugTry-catch.png"></p>
+<p><img src="/images/debugTry-catch.png"></p>
 <p>在调试模式中发现 input.nextInt()方法的异常在递归时并未清除而是保留下来,所以catch中的条件一直被触发,造成死循环.</p>
 <hr>
 <p>解决方法:在方法中创建Scanner对象.</p>
