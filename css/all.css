@@ -682,7 +682,8 @@ nav i.icon-basic-eye {
 	100% { opacity: 1; }
 }
 div.navbar-inner {
-    animation:reminAnimation 8s infinite ease-in-out forwards;
+    transition:.7s ease-in-out .5s;
+    transform:translate(0px,-40px);
 }
 .navbar-inner:hover {
 	background-color: #ffffffdd;
@@ -694,7 +695,9 @@ div.navbar-inner {
 	z-index:10;
 	border:none;
     border-bottom: none;
-    animation:reminAnimationHover 3s 1 ease-in-out forwards;
+    transition:.7s ease-in-out ;
+    transform:translate(0px,0px);
+    
 }
 @keyframes reminAnimationHover{
 	to { opacity: 1; }
