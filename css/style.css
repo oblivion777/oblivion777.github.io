@@ -700,7 +700,7 @@ div.navbar-inner {
 /* Changes nav background color to white on scroll */
 .navbar-inner.lightnav-alt {
 	background-color: #fff;
-    background-color: rgba(255,255,255,.9)
+    background-color: rgba(244,244,244,.9)
 }
 @media (max-width: 1024px) {
 	.navbar-inner.lightnav-alt {
