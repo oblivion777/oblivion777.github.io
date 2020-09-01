@@ -675,15 +675,10 @@ nav i.icon-basic-eye {
 	border-bottom: none;
 }
 /*动画*/
-@keyframes reminAnimation{
-	25% { opacity: 0; }
-    50% { opacity: 0; }
-    75% { opacity: 0; }
-	100% { opacity: 1; }
-}
+
 div.navbar-inner {
     transition:.7s ease-in-out .5s;
-    transform:translate(0px,-40px);
+    /*transform:translate(0px,-40px);*/
 }
 .navbar-inner:hover {
 	background-color: #ffffffdd;
@@ -696,12 +691,10 @@ div.navbar-inner {
 	border:none;
     border-bottom: none;
     transition:.7s ease-in-out ;
-    transform:translate(0px,0px);
+    /*transform:translate(0px,0px);*/
     
 }
-@keyframes reminAnimationHover{
-	to { opacity: 1; }
-}
+
 /*   ====   */
 #blog-post .navbar-inner {
 	background-color: #fff;
