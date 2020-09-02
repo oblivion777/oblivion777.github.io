@@ -664,7 +664,7 @@ nav i.icon-basic-eye {
 
 div.navbar-inner {
     transition:.7s ease-in-out .5s;
-    /*transform:translate(0px,-40px);*/
+    /*transform:translate(0px,-66px);*/
 }
 .navbar-inner:hover {
 	background-color: #ffffffdd;
