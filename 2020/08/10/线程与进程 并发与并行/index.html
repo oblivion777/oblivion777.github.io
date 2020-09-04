@@ -21,7 +21,7 @@
     <script src="/js/pace.min.js"></script>
     <link type="text/css" href="/css/pace-theme.css" rel="stylesheet" />
 
-  <title>通过dig命令理解DNS迭代解析 | Dreamscape</title>
+  <title>线程与进程 并发与并行 | Dreamscape</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -180,58 +180,45 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2020-08-22T16:36:39.000Z" itemprop="datePublished">
-          2020-08-23
+      <time datetime="2020-08-09T16:00:00.000Z" itemprop="datePublished">
+          2020-08-10
       </time>
     
-    
-    | 
-    <a href='/tags/DNS/'>DNS</a>
-    
-    
 </span>
-                <h1>通过dig命令理解DNS迭代解析</h1>
+                <h1>线程与进程 并发与并行</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>最近给Github Pages弄域名和CDN加速,为了查看DNS的解析过程,稍微学习了DNS迭代解析.</p>
-<p>迭代解析是以DNS客户端为中心进行查询,如图所示:</p>
-<p><img src="/images/dns_analysis.png"></p>
-<hr>
-<h2 id="DNS迭代解析流程"><a href="#DNS迭代解析流程" class="headerlink" title="DNS迭代解析流程"></a>DNS迭代解析流程</h2><p>下面以Linux系统下的dig +trace blog.dreamscape.ink为例:</p>
-<ul>
-<li>获取本地DNS记录的全球根域名服务器地址</li>
-</ul>
-<p><img src="/images/dns_analysis1.png"></p>
-<hr>
-<ul>
-<li>最先回复的根域名服务器将ink顶级域名服务器列表返回给客户端</li>
-</ul>
-<p><img src="/images/dns_analysis2.png"></p>
-<p>根域名服务器199.9.14.201:53(b.root-servers.net)返回ink顶级域名服务器列表.</p>
-<hr>
-<ul>
-<li>.ink顶级域名服务器返回二级域名dreamscape.ink的NS服务器列表</li>
-</ul>
-<p><img src="/images/dns_analysis3.png"></p>
-<p>.ink顶级域名服务器212.18.248.41:53(c.nic.ink)查询得到dreamscape.ink是由cloudflare管理的,返回cloudflare的NS地址.</p>
-<hr>
-<ul>
-<li>cloudflareDNS服务器返回最终的结果.</li>
-</ul>
-<p><img src="/images/dns_analysis4.png"></p>
-<p>cloudflareDNS服务器108.162.195.191:53(tate.ns.cloudflare.com)将查询到blog.dreamscape.ink的A记录信息返回给客户端.</p>
-<p>blog.dreamscape.ink是经过cloudflare的CDN加速域名,返回了3条A记录,这三条A记录就是最终查询结果.</p>
-<hr>
+      		<h1 id="1-线程与进程"><a href="#1-线程与进程" class="headerlink" title="1.线程与进程"></a>1.线程与进程</h1><br/>
+
+<h2 id="进程-Process"><a href="#进程-Process" class="headerlink" title="进程(Process)"></a>进程(Process)</h2><p>是Windows系统中的一个基本概念,它包含着一个运行程序所需要的资源.一个正在运行的程序在操作系统中被视为一个进程,进程可以包括一个或多个线程.</p>
+<br/>
+
+<h2 id="线程-Thread"><a href="#线程-Thread" class="headerlink" title="线程(Thread):"></a>线程(Thread):</h2><p>是进程中的基本执行单元,是操作系统分配CPU时间的基本单位,一个进程可以包含若干个线程,在进程入口执行的第一个线程被视为这个进程的主线程.</p>
+<br/>
+
+<h1 id="2-并发与并行"><a href="#2-并发与并行" class="headerlink" title="2.并发与并行"></a>2.并发与并行</h1><p>并发是指一个时间段内,有若干程序都在同一个CPU上运行,但任意一个时刻只有一个程序在运行.</p>
+<p>并行是指一个时间段内,有若干程序都在几个CPU上运行任意一个时刻点上,有多个程序在同时运行,并且多个程序之间互不干扰.</p>
+<p>两者区别如图所示:</p>
+<p><img src="/images/concurrence.jpg"></p>
+<p><img src="/images/parallel.jpg"></p>
+<br/>
+
+<p>并行是多个程序在多个CPU(核心)上同时运行,任意一个时刻可以有很多个程序同时运行,互不干扰.</p>
+<p>并发是多个程序在一个CPU上运行,CPU在多个程序之间快速切换,微观上不是同时运行,任意一个时刻只有一个程序在运行,但因为CPU切换速度非常快,所以给人感觉像多个程序同时运行一样,你还没反应过来,CPU已经切换了好几个程序了.</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
+    <a class="pull-left" href="/2020/08/10/json%E8%A7%A3%E6%9E%90/" style="float: left;">
+        ← 解析JSON
+    </a>
     
-    <a class="pull-right" href="/2020/08/10/json%E8%A7%A3%E6%9E%90/">
-        解析JSON →
+    
+    <a class="pull-right" href="/2020/08/08/Try-catch%E9%80%A0%E6%88%90%E6%AD%BB%E5%BE%AA%E7%8E%AF(%E6%97%A0%E9%99%90%E9%80%92%E5%BD%92)%E7%9A%84%E9%97%AE%E9%A2%98/">
+        Try-catch造成死循环(无限递归)的问题 →
     </a>
     
 </nav>
