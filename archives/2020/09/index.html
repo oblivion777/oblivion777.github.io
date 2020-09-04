@@ -21,7 +21,7 @@
     <script src="/js/pace.min.js"></script>
     <link type="text/css" href="/css/pace-theme.css" rel="stylesheet" />
 
-  <title>通过dig命令理解DNS迭代解析 | Dreamscape</title>
+  <title>Archives: 2020/9 | Dreamscape</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -64,7 +64,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -174,126 +174,156 @@
     <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2020-08-22T16:36:39.000Z" itemprop="datePublished">
-          2020-08-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/DNS/'>DNS</a>
-    
-    
-</span>
-                <h1>通过dig命令理解DNS迭代解析</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+    <!--===============================流星动画==================================================-->
+    <div class="index-bg" style="position:fixed">
+        <!------------------------------流星---------------------------------------->
+        <div class="star" style="top: 80px; left: 10%; animation-delay: 3s;"></div>
+        <div class="star" style="top: 40px; left: -10%; animation-delay: 2s;"></div>
+        <div class="star" style="top: 120px; left: 10%; animation-delay: 4s;"></div>
+        <div class="star" style="top: 20px; left: 10%; animation-delay: 5s;"></div>
+        <div class="star" style="top: -220px; left: -10%; animation-delay: 4s;"></div>
+        <div class="star" style="top: 100px; left: -10%; animation-delay: 6s;"></div>
+        <div class="star" style="top: -120px; left: -10%; animation-delay: 7s;"></div>
+        <div class="star" style="top: -300px; left: 10%; animation-delay: 6s;"></div>
+        <!-------------------------------闪烁的星星--------------------------------------->
+        <div class="shineStars" style="top: 10vh; left: 60%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 50%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 40%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 30vh; left: 60%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 54%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 52%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 40vh; left: 50%; animation-delay: 6s;"></div>
+        <div class="shineStars" style="top: 45vh; left: 40%; animation-delay: 7s;"></div>
+
+        <div class="shineStars" style="top: 10vh; left: 10%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 20%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 19%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 30vh; left: 30%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 40vh; left: 17%; animation-delay: 6s;"></div>
+        <div class="shineStars" style="top: 45vh; left: 22%; animation-delay: 7s;"></div>
+
+        <div class="shineStars" style="top: 44vh; left: 10%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 71vh; left: 20%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 59vh; left: 19%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 68vh; left: 30%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 77vh; left: 17%; animation-delay: 6s;"></div>
+        <div class="shineStars" style="top: 66vh; left: 22%; animation-delay: 7s;"></div>
+
+        <div class="shineStars" style="top: 10vh; left: 75%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 70%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 20vh; left: 89%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 30vh; left: 77%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 40vh; left: 91%; animation-delay: 6s;"></div>
+        <div class="shineStars" style="top: 45vh; left: 83%; animation-delay: 7s;"></div>
+
+        <div class="shineStars" style="top: 20vh; left: 85%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 10vh; left: 77%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 15vh; left: 95%; animation-delay: 6s;"></div>
+
+        <div class="shineStars" style="top: 60vh; left: 55%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 70vh; left: 44%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 77vh; left: 48%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 86vh; left: 52%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 66vh; left: 40%; animation-delay: 6s;"></div>
+        <div class="shineStars" style="top: 81vh; left: 58%; animation-delay: 7s;"></div>
+
+        <div class="shineStars" style="top: 45vh; left: 55%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 43vh; left: 44%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 53vh; left: 48%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 33vh; left: 52%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 55vh; left: 40%; animation-delay: 6s;"></div>
+        <div class="shineStars" style="top: 49vh; left: 58%; animation-delay: 7s;"></div>
+
+        <div class="shineStars" style="top: 60vh; left: 75%; animation-delay: 3s;"></div>
+        <div class="shineStars" style="top: 70vh; left: 70%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 77vh; left: 89%; animation-delay: 5s;"></div>
+        <div class="shineStars" style="top: 86vh; left: 77%; animation-delay: 4s;"></div>
+        <div class="shineStars" style="top: 66vh; left: 91%; animation-delay: 6s;"></div>
+        <div class="shineStars" style="top: 81vh; left: 83%; animation-delay: 7s;"></div>
+    </div>
+    <!--===========================动画end=================================================-->
+		
+		<div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>THE STARS MY DESTINATION</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>BERNIS</p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<p>最近给Github Pages弄域名和CDN加速,为了查看DNS的解析过程,稍微学习了DNS迭代解析.</p>
-<p>迭代解析是以DNS客户端为中心进行查询,如图所示:</p>
-<p><img src="/images/dns_analysis.png"></p>
-<hr>
-<h2 id="DNS迭代解析流程"><a href="#DNS迭代解析流程" class="headerlink" title="DNS迭代解析流程"></a>DNS迭代解析流程</h2><p>下面以Linux系统下的dig +trace blog.dreamscape.ink为例:</p>
-<ul>
-<li>获取本地DNS记录的全球根域名服务器地址</li>
-</ul>
-<p><img src="/images/dns_analysis1.png"></p>
-<hr>
-<ul>
-<li>最先回复的根域名服务器将ink顶级域名服务器列表返回给客户端</li>
-</ul>
-<p><img src="/images/dns_analysis2.png"></p>
-<p>根域名服务器199.9.14.201:53(b.root-servers.net)返回ink顶级域名服务器列表.</p>
-<hr>
-<ul>
-<li>.ink顶级域名服务器返回二级域名dreamscape.ink的NS服务器列表</li>
-</ul>
-<p><img src="/images/dns_analysis3.png"></p>
-<p>.ink顶级域名服务器212.18.248.41:53(c.nic.ink)查询得到dreamscape.ink是由cloudflare管理的,返回cloudflare的NS地址.</p>
-<hr>
-<ul>
-<li>cloudflareDNS服务器返回最终的结果.</li>
-</ul>
-<p><img src="/images/dns_analysis4.png"></p>
-<p>cloudflareDNS服务器108.162.195.191:53(tate.ns.cloudflare.com)将查询到blog.dreamscape.ink的A记录信息返回给客户端.</p>
-<p>blog.dreamscape.ink是经过cloudflare的CDN加速域名,返回了3条A记录,这三条A记录就是最终查询结果.</p>
-<hr>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    <a class="pull-left" href="/2020/09/04/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B%20%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%B9%B6%E8%A1%8C/" style="float: left;">
-        ← 线程与进程 并发与并行
-    </a>
-    
-    
-    <a class="pull-right" href="/2020/08/10/json%E8%A7%A3%E6%9E%90/">
-        解析JSON →
-    </a>
-    
-</nav>
-
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
-
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2020/09/04/JAVA创建类类型数组遇到的问题/">JAVA创建类类型数组遇到的问题</a></h4>
+                            
+                            <p><time datetime="2020-09-04T02:38:15.443Z"><a href="/2020/09/04/JAVA创建类类型数组遇到的问题/">2020-09-04</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2020/09/04/Try-catch造成死循环(无限递归)的问题/">Try-catch造成死循环(无限递归)的问题</a></h4>
+                            
+                            <p><time datetime="2020-09-04T02:38:15.443Z"><a href="/2020/09/04/Try-catch造成死循环(无限递归)的问题/">2020-09-04</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2020/09/04/线程与进程 并发与并行/">线程与进程 并发与并行</a></h4>
+                            
+                            <p><time datetime="2020-09-04T02:38:15.443Z"><a href="/2020/09/04/线程与进程 并发与并行/">2020-09-04</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>FALLING INTO A TRANCE</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
