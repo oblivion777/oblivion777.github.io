@@ -21,7 +21,7 @@
     <script src="/js/pace.min.js"></script>
     <link type="text/css" href="/css/pace-theme.css" rel="stylesheet" />
 
-  <title>Tag: test1 | Dreamscape</title>
+  <title>JAVA创建类类型数组遇到的问题 | Dreamscape</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -64,7 +64,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -174,110 +174,100 @@
     <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-    <!--===============================流星动画==================================================-->
-    <div class="index-bg" style="position:fixed">
-        <!------------------------------流星---------------------------------------->
-        <div class="meteor" style="top: 80px; left: 10%; animation-delay: 3s;"></div>
-        <div class="meteor" style="top: 40px; left: -10%; animation-delay: 2s;"></div>
-        <div class="meteor" style="top: 120px; left: 10%; animation-delay: 4s;"></div>
-        <div class="meteor" style="top: 20px; left: 10%; animation-delay: 5s;"></div>
-        <div class="meteor" style="top: -220px; left: -10%; animation-delay: 4s;"></div>
-        <div class="meteor" style="top: 100px; left: -10%; animation-delay: 6s;"></div>
-        <div class="meteor" style="top: -120px; left: -10%; animation-delay: 7s;"></div>
-        <div class="meteor" style="top: -300px; left: 10%; animation-delay: 6s;"></div>
-    </div>
-	<div class="stars"></div>
-
-<script src="/js/stopExecutionOnTimeout.js">></script>
-<script>
-    $(document).ready(function () {
-        var stars = 1800;
-        var $stars = $('.stars');
-        var r = 1800;
-        for (var i = 0; i < stars; i++) {
-            if (window.CP.shouldStopExecution(1)) {
-                break;
-            }
-            var $star = $('<div/>').addClass('star');
-            $stars.append($star);
-        }
-        window.CP.exitedLoop(1);
-        $('.star').each(function () {
-            var cur = $(this);
-            var s = 0.2 + Math.random() * 1;
-            var curR = r + Math.random() * 300;
-            cur.css({
-                transformOrigin: '0 0 ' + curR + 'px',
-                transform: ' translate3d(0,0,-' + curR + 'px) rotateY(' + Math.random() * 360 + 'deg) rotateX(' + Math.random() * -50 + 'deg) scale(' + s + ',' + s + ')'
-            });
-        });
-    });       
-</script>
-    <!--===========================动画end=================================================-->
-		
-		<div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>THE STARS MY DESTINATION</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>BERNIS</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2020/06/06/hello-world/">Hello World</a></h4>
-                            
-                            <p><time datetime="2020-06-05T16:00:00.000Z"><a href="/2020/06/06/hello-world/">2020-06-06</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-09-04T02:38:15.443Z" itemprop="datePublished">
+          2020-09-04
+      </time>
+    
+</span>
+                <h1>JAVA创建类类型数组遇到的问题</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>这是一个在写作业时发现的一个有趣的地方.</p>
+<p>当时想测试创建多个对象,于是想到使用类数组,于是模仿整形数组的创建方法凭感觉写出了如下代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Book[] book=<span class="keyword">new</span> Book[<span class="number">4</span>];</span><br><span class="line">        </span><br><span class="line">        book[<span class="number">0</span>].setTitle(<span class="string">&quot;一本少于200页的测试用书&quot;</span>);</span><br><span class="line">        book[<span class="number">0</span>].setPageNum(<span class="number">20</span>);</span><br><span class="line">        Book.detail(book[<span class="number">0</span>]);</span><br><span class="line">        </span><br><span class="line">        book[<span class="number">1</span>].setTitle(<span class="string">&quot;测试用书&quot;</span>);</span><br><span class="line">        book[<span class="number">1</span>].setPageNum(<span class="number">233</span>);</span><br><span class="line">        Book.detail(book[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>FALLING INTO A TRANCE</p>
+<blockquote>
+<p>运行结果:<em>Exception in thread “main” java.lang.NullPointerException</em>…….</p>
+</blockquote>
+<p>提示空指针异常.</p>
+<p>于是想到类类型数组中的元素为指向对象的指针,和C语言中指针数组相似的概念.使用以上代码创建的只是若干个指针,并没有指向任何对象,因此报错.</p>
+<p>然后改成如下代码,使用for循环和new开辟内存空间之后就能对对象属性赋值了.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Book[] book=<span class="keyword">new</span> Book[<span class="number">4</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;book.length;i++) &#123;  </span><br><span class="line">        <span class="comment">/*********初始化 类 类型数组*****************</span></span><br><span class="line"><span class="comment">         * </span></span><br><span class="line"><span class="comment">         * 类数组的一个元素可以理解为指向一个对象的指针</span></span><br><span class="line"><span class="comment">         * 未经初始化直接赋值  运行器会报错</span></span><br><span class="line"><span class="comment">         * </span></span><br><span class="line"><span class="comment">         * 因为未经初始化,类数组每个元素指向的是非法地址(野指针)造成编译器报错</span></span><br><span class="line"><span class="comment">         * 所以要使用new为每一个元素在堆中开辟合法的内存空间</span></span><br><span class="line"><span class="comment">         * </span></span><br><span class="line"><span class="comment">         *****************************************/</span></span><br><span class="line">            book[i]=<span class="keyword">new</span> Book(<span class="string">&quot;测试用书&quot;</span>,<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        book[<span class="number">0</span>].setTitle(<span class="string">&quot;一本少于200页的测试用书&quot;</span>);</span><br><span class="line">        book[<span class="number">0</span>].setPageNum(<span class="number">20</span>);</span><br><span class="line">        Book.detail(book[<span class="number">0</span>]);</span><br><span class="line">        </span><br><span class="line">        book[<span class="number">1</span>].setTitle(<span class="string">&quot;测试用书&quot;</span>);</span><br><span class="line">        book[<span class="number">1</span>].setPageNum(<span class="number">233</span>);</span><br><span class="line">        Book.detail(book[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2020/09/04/Try-catch%E9%80%A0%E6%88%90%E6%AD%BB%E5%BE%AA%E7%8E%AF(%E6%97%A0%E9%99%90%E9%80%92%E5%BD%92)%E7%9A%84%E9%97%AE%E9%A2%98/">
+        Try-catch造成死循环(无限递归)的问题 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
