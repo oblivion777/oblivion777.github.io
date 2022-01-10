@@ -274,7 +274,7 @@
                     <p>
                       
                         OpenWrt路由器上的SmartDNS提供DNS服务,侦听端口为6053,Windows不能指定DNS端口号所以试着用一台内网Ubuntu虚拟机转发DNS请求.
-123456789101112131415#!/bin/bashDNS_server=&quot;192.168.1.1:6053&quot;DNS_port=&quot;6053&quot;iptables -t nat -A PREROUTING -p udp --dpo
+123456789101112131415#!/bin/bashDNS_server=&quot;192.168.1.1&quot;DNS_port=&quot;6053&quot;iptables -t nat -A PREROUTING -p udp --dport 53
                       
                     </p>
                     
