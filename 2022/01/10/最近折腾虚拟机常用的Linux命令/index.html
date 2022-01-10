@@ -21,7 +21,7 @@
     <script src="/js/pace.min.js"></script>
     <link type="text/css" href="/css/pace-theme.css" rel="stylesheet" />
 
-  <title>Tag: Ubuntu | Dreamscape</title>
+  <title>最近折腾虚拟机常用的Linux命令 | Dreamscape</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -64,7 +64,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -174,119 +174,99 @@
     <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-    <!--===============================流星动画==================================================-->
-    <div class="index-bg" style="position:fixed">
-        <!------------------------------流星---------------------------------------->
-        <div class="meteor" style="top: 80px; left: 10%; animation-delay: 3s;"></div>
-        <div class="meteor" style="top: 40px; left: -10%; animation-delay: 2s;"></div>
-        <div class="meteor" style="top: 120px; left: 10%; animation-delay: 4s;"></div>
-        <div class="meteor" style="top: 20px; left: 10%; animation-delay: 5s;"></div>
-        <div class="meteor" style="top: -220px; left: -10%; animation-delay: 4s;"></div>
-        <div class="meteor" style="top: 100px; left: -10%; animation-delay: 6s;"></div>
-        <div class="meteor" style="top: -120px; left: -10%; animation-delay: 7s;"></div>
-        <div class="meteor" style="top: -300px; left: 10%; animation-delay: 6s;"></div>
-    </div>
-	<div class="stars"></div>
-
-<script src="/js/stopExecutionOnTimeout.js">></script>
-<script>
-    $(document).ready(function () {
-        var stars = 1800;
-        var $stars = $('.stars');
-        var r = 1800;
-        for (var i = 0; i < stars; i++) {
-            if (window.CP.shouldStopExecution(1)) {
-                break;
-            }
-            var $star = $('<div/>').addClass('star');
-            $stars.append($star);
-        }
-        window.CP.exitedLoop(1);
-        $('.star').each(function () {
-            var cur = $(this);
-            var s = 0.2 + Math.random() * 1;
-            var curR = r + Math.random() * 300;
-            cur.css({
-                transformOrigin: '0 0 ' + curR + 'px',
-                transform: ' translate3d(0,0,-' + curR + 'px) rotateY(' + Math.random() * 360 + 'deg) rotateX(' + Math.random() * -50 + 'deg) scale(' + s + ',' + s + ')'
-            });
-        });
-    });       
-</script>
-    <!--===========================动画end=================================================-->
-		
-		<div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>THE STARS MY DESTINATION</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>BERNIS</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2022/01/10/最近折腾虚拟机常用的Linux命令/">最近折腾虚拟机常用的Linux命令</a></h4>
-                            
-                            <p><time datetime="2022-01-09T16:00:00.000Z"><a href="/2022/01/10/最近折腾虚拟机常用的Linux命令/">2022-01-10</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/12/23/Ubuntu通过RSA公钥登录SSH/">Ubuntu通过RSA公钥登录SSH</a></h4>
-                            
-                            <p><time datetime="2021-12-22T16:00:00.000Z"><a href="/2021/12/23/Ubuntu通过RSA公钥登录SSH/">2021-12-23</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-01-09T16:00:00.000Z" itemprop="datePublished">
+          2022-01-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/Ubuntu/'>Ubuntu</a>,
+    
+    <a href='/tags/Linux/'>Linux</a>
+    
+    
+</span>
+                <h1>最近折腾虚拟机常用的Linux命令</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-keygen -t rsa -b 4096   <span class="comment">#生成4096长度的RSA密钥对,用于ssh</span></span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default multi-user.target  <span class="comment">#关闭GUI</span></span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default graphical.target   <span class="comment">#启用GUI</span></span><br></pre></td></tr></table></figure>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>FALLING INTO A TRANCE</p>
+<h1 id="ESXi"><a href="#ESXi" class="headerlink" title="ESXi"></a>ESXi</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools --punchzero <span class="comment">#回收VMDK虚拟磁盘空间</span></span><br><span class="line">vmkfstools -i oldfile newfile -d thin  <span class="comment">#转换esxi能使用的vmdk</span></span><br></pre></td></tr></table></figure>
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2021/12/23/Ubuntu%E9%80%9A%E8%BF%87RSA%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95SSH/">
+        Ubuntu通过RSA公钥登录SSH →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

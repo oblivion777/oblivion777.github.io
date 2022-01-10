@@ -200,11 +200,11 @@
 
 <br/>
 
-<h1 id="2-在服务器上安装公钥"><a href="#2-在服务器上安装公钥" class="headerlink" title="2.在服务器上安装公钥"></a>2.在服务器上安装公钥</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装ssh服务,Ubuntu默认只有ssh客户端</span></span><br><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
+<h1 id="2-在服务器上安装公钥"><a href="#2-在服务器上安装公钥" class="headerlink" title="2.在服务器上安装公钥"></a>2.在服务器上安装公钥</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装ssh服务,Ubuntu默认只有ssh客户端</span></span><br><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<h2 id="导入公钥至服务端"><a href="#导入公钥至服务端" class="headerlink" title="导入公钥至服务端"></a>导入公钥至服务端</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">将客户端id_rsa.pub中的内容复制进服务端authorized_keys文件中,如果没有此文件需要手动创建</span></span><br><span class="line">sudo touch ~/.ssh/authorized_keys</span><br><span class="line"><span class="meta">#</span><span class="bash">authorized_keys需要600权限</span></span><br><span class="line">sudo chmod 600 authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">重启ssh服务</span></span><br><span class="line">service sshd restart</span><br></pre></td></tr></table></figure>
+<h2 id="导入公钥至服务端"><a href="#导入公钥至服务端" class="headerlink" title="导入公钥至服务端"></a>导入公钥至服务端</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将客户端id_rsa.pub中的内容复制进服务端authorized_keys文件中,如果没有此文件需要手动创建</span></span><br><span class="line">sudo touch ~/.ssh/authorized_keys</span><br><span class="line"><span class="comment">#authorized_keys需要600权限</span></span><br><span class="line">sudo chmod 600 authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="comment">#重启ssh服务</span></span><br><span class="line">service sshd restart</span><br></pre></td></tr></table></figure>
 
 <p><img src="/images/ssh_rsa.png"></p>
 
@@ -212,6 +212,10 @@
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2022/01/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BE%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%B8%B8%E7%94%A8%E7%9A%84Linux%E5%91%BD%E4%BB%A4/" style="float: left;">
+        ← 最近折腾虚拟机常用的Linux命令
+    </a>
     
     
     <a class="pull-right" href="/2020/08/23/%E9%80%9A%E8%BF%87dig%E5%91%BD%E4%BB%A4%E7%90%86%E8%A7%A3DNS%E8%BF%AD%E4%BB%A3%E8%A7%A3%E6%9E%90/">
