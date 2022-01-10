@@ -21,7 +21,7 @@
     <script src="/js/pace.min.js"></script>
     <link type="text/css" href="/css/pace-theme.css" rel="stylesheet" />
 
-  <title>Ubuntu通过RSA公钥登录SSH | Dreamscape</title>
+  <title>最近折腾虚拟机常用的Linux命令 | Dreamscape</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -180,46 +180,39 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2021-12-22T16:00:00.000Z" itemprop="datePublished">
-          2021-12-23
+      <time datetime="2022-01-06T16:00:00.000Z" itemprop="datePublished">
+          2022-01-07
       </time>
     
     
     | 
     <a href='/tags/Ubuntu/'>Ubuntu</a>,
     
-    <a href='/tags/SSH/'>SSH</a>
+    <a href='/tags/Linux/'>Linux</a>
     
     
 </span>
-                <h1>Ubuntu通过RSA公钥登录SSH</h1>
+                <h1>最近折腾虚拟机常用的Linux命令</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="1-客户端创建密钥对"><a href="#1-客户端创建密钥对" class="headerlink" title="1.客户端创建密钥对"></a>1.客户端创建密钥对</h1><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt;ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-b</span> <span class="number">4096</span>    <span class="comment">#创建RSA密钥对,长度为4096</span></span><br><span class="line"><span class="comment">#一路回车或者按需设置秘钥锁码</span></span><br><span class="line"><span class="comment">#公钥文件可以在C:\Users\用户名\.ssh 目录找到</span></span><br></pre></td></tr></table></figure>
+      		<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096   <span class="comment">#生成4096长度的RSA密钥对,用于ssh</span></span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default multi-user.target  <span class="comment">#关闭GUI</span></span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default graphical.target   <span class="comment">#启用GUI</span></span><br></pre></td></tr></table></figure>
 
-<br/>
+<h1 id="ESXi"><a href="#ESXi" class="headerlink" title="ESXi"></a>ESXi</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools --punchzero <span class="comment">#回收VMDK虚拟磁盘空间</span></span><br><span class="line">vmkfstools -i oldfile newfile -d thin  <span class="comment">#转换esxi能使用的vmdk</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="2-在服务器上安装公钥"><a href="#2-在服务器上安装公钥" class="headerlink" title="2.在服务器上安装公钥"></a>2.在服务器上安装公钥</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装ssh服务,Ubuntu默认只有ssh客户端</span></span><br><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h2 id="导入公钥至服务端"><a href="#导入公钥至服务端" class="headerlink" title="导入公钥至服务端"></a>导入公钥至服务端</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将客户端id_rsa.pub中的内容复制进服务端authorized_keys文件中,如果没有此文件需要手动创建</span></span><br><span class="line">sudo touch ~/.ssh/authorized_keys</span><br><span class="line"><span class="comment">#authorized_keys需要600权限</span></span><br><span class="line">sudo chmod 600 authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="comment">#重启ssh服务</span></span><br><span class="line">service sshd restart</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/ssh_rsa.png"></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2022/01/07/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BE%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%B8%B8%E7%94%A8%E7%9A%84Linux%E5%91%BD%E4%BB%A4/" style="float: left;">
-        ← 最近折腾虚拟机常用的Linux命令
+    <a class="pull-left" href="/2022/01/10/%E4%BD%BF%E7%94%A8iptables%E8%BD%AC%E5%8F%91DNS%E8%AF%B7%E6%B1%82/" style="float: left;">
+        ← 使用iptables转发DNS请求
     </a>
     
     
-    <a class="pull-right" href="/2020/08/23/%E9%80%9A%E8%BF%87dig%E5%91%BD%E4%BB%A4%E7%90%86%E8%A7%A3DNS%E8%BF%AD%E4%BB%A3%E8%A7%A3%E6%9E%90/">
-        通过dig命令理解DNS迭代解析 →
+    <a class="pull-right" href="/2021/12/23/Ubuntu%E9%80%9A%E8%BF%87RSA%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95SSH/">
+        Ubuntu通过RSA公钥登录SSH →
     </a>
     
 </nav>

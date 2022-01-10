@@ -253,7 +253,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2022/01/10/最近折腾虚拟机常用的Linux命令/">最近折腾虚拟机常用的Linux命令</a></h3>
+                    <h3><a href="/2022/01/10/使用iptables转发DNS请求/">使用iptables转发DNS请求</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2022-01-09T16:00:00.000Z" itemprop="datePublished">
@@ -273,14 +273,52 @@
                 <div class="col-md-8">
                     <p>
                       
-                        Ubuntu1234ssh-keygen -t rsa -b 4096   #生成4096长度的RSA密钥对,用于sshsudo systemctl set-default multi-user.target  #关闭GUIsudo systemctl set-default graphical.target   #启用GUI
-
-ESXi12vmkfstools --punchzero #回收VMDK虚拟磁盘空间vmkfstools -
+                        OpenWrt路由器上的SmartDNS提供DNS服务,侦听端口为6053,Windows不能指定DNS端口号所以试着用一台内网Ubuntu虚拟机转发DNS请求.
+123456789101112131415#!/bin/bashDNS_server=&quot;192.168.1.1:6053&quot;DNS_port=&quot;6053&quot;iptables -t nat -A PREROUTING -p udp --dpo
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2022/01/10/最近折腾虚拟机常用的Linux命令/">Read More...</a>
+                        <a href="/2022/01/10/使用iptables转发DNS请求/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/01/07/最近折腾虚拟机常用的Linux命令/">最近折腾虚拟机常用的Linux命令</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-01-06T16:00:00.000Z" itemprop="datePublished">
+          2022-01-07
+      </time>
+    
+    
+    | 
+    <a href='/tags/Ubuntu/'>Ubuntu</a>,
+    
+    <a href='/tags/Linux/'>Linux</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Ubuntu123ssh-keygen -t rsa -b 4096   #生成4096长度的RSA密钥对,用于sshsudo systemctl set-default multi-user.target  #关闭GUIsudo systemctl set-default graphical.target   #启用GUI
+
+ESXi12vmkfstools --punchzero #回收VMDK虚拟磁盘空间vmkfstools -i
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/01/07/最近折腾虚拟机常用的Linux命令/">Read More...</a>
                     </p>
                     
                 </div>
