@@ -204,7 +204,7 @@
 <h2 id="在MySQL查询结果"><a href="#在MySQL查询结果" class="headerlink" title="在MySQL查询结果"></a>在MySQL查询结果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT md5,COUNT(*) AS CONTMD5 FROM mods_test GROUP BY md5 HAVING CONTMD5%14!&#x3D;0;</span><br><span class="line">Empty set</span><br></pre></td></tr></table></figure>
 
 <p>我一共运行了14次程序.</p>
-<p>此时对数据进行分组并计数,只要计数能被14整除,那说明getline在多线程操读取切没有上锁的情况下,没有重复读取一行或者漏读一行数据.</p>
+<p>此时对数据进行分组并计数,只要计数能被14整除,那说明getline在多线程操读取且没有上锁的情况下,没有重复读取一行或者漏读一行数据.</p>
 <p>从试验结果来看,getline是线程安全的.</p>
 
             <div class="clearfix"></div>
