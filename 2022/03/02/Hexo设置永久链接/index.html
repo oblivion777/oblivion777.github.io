@@ -21,7 +21,7 @@
     <script src="/js/pace.min.js"></script>
     <link type="text/css" href="/css/pace-theme.css" rel="stylesheet" />
 
-  <title>Archives | Dreamscape</title>
+  <title>Hexo设置永久链接 | Dreamscape</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -64,7 +64,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -174,197 +174,96 @@
     <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-    <!--===============================流星动画==================================================-->
-    <div class="index-bg" style="position:fixed">
-        <!------------------------------流星---------------------------------------->
-        <div class="meteor" style="top: 80px; left: 10%; animation-delay: 3s;"></div>
-        <div class="meteor" style="top: 40px; left: -10%; animation-delay: 2s;"></div>
-        <div class="meteor" style="top: 120px; left: 10%; animation-delay: 4s;"></div>
-        <div class="meteor" style="top: 20px; left: 10%; animation-delay: 5s;"></div>
-        <div class="meteor" style="top: -220px; left: -10%; animation-delay: 4s;"></div>
-        <div class="meteor" style="top: 100px; left: -10%; animation-delay: 6s;"></div>
-        <div class="meteor" style="top: -120px; left: -10%; animation-delay: 7s;"></div>
-        <div class="meteor" style="top: -300px; left: 10%; animation-delay: 6s;"></div>
-    </div>
-	<div class="stars"></div>
-
-<script src="/js/stopExecutionOnTimeout.js">></script>
-<script>
-    $(document).ready(function () {
-        var stars = 1800;
-        var $stars = $('.stars');
-        var r = 1800;
-        for (var i = 0; i < stars; i++) {
-            if (window.CP.shouldStopExecution(1)) {
-                break;
-            }
-            var $star = $('<div/>').addClass('star');
-            $stars.append($star);
-        }
-        window.CP.exitedLoop(1);
-        $('.star').each(function () {
-            var cur = $(this);
-            var s = 0.2 + Math.random() * 1;
-            var curR = r + Math.random() * 300;
-            cur.css({
-                transformOrigin: '0 0 ' + curR + 'px',
-                transform: ' translate3d(0,0,-' + curR + 'px) rotateY(' + Math.random() * 360 + 'deg) rotateX(' + Math.random() * -50 + 'deg) scale(' + s + ',' + s + ')'
-            });
-        });
-    });       
-</script>
-    <!--===========================动画end=================================================-->
-		
-		<div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>THE STARS MY DESTINATION</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>BERNIS</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2022/03/02/Hexo设置永久链接/">Hexo设置永久链接</a></h4>
-                            
-                            <p><time datetime="2022-03-01T16:00:00.000Z"><a href="/2022/03/02/Hexo设置永久链接/">2022-03-02</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2022/01/30/getline线程安全/">std::istream::getline是否线程安全</a></h4>
-                            
-                            <p><time datetime="2022-01-29T16:00:00.000Z"><a href="/2022/01/30/getline线程安全/">2022-01-30</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2022/01/29/使用gitbash连接GitHub仓库/">使用gitbash连接GitHub仓库遇到的一点小问题</a></h4>
-                            
-                            <p><time datetime="2022-01-28T16:00:00.000Z"><a href="/2022/01/29/使用gitbash连接GitHub仓库/">2022-01-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2022/01/10/使用iptables转发DNS请求/">使用iptables转发DNS请求</a></h4>
-                            
-                            <p><time datetime="2022-01-09T16:00:00.000Z"><a href="/2022/01/10/使用iptables转发DNS请求/">2022-01-10</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2022/01/07/最近折腾虚拟机常用的Linux命令/">最近折腾虚拟机常用的Linux命令</a></h4>
-                            
-                            <p><time datetime="2022-01-06T16:00:00.000Z"><a href="/2022/01/07/最近折腾虚拟机常用的Linux命令/">2022-01-07</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/12/23/Ubuntu通过RSA公钥登录SSH/">Ubuntu通过RSA公钥登录SSH</a></h4>
-                            
-                            <p><time datetime="2021-12-22T16:00:00.000Z"><a href="/2021/12/23/Ubuntu通过RSA公钥登录SSH/">2021-12-23</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2020/08/23/通过dig命令理解DNS迭代解析/">通过dig命令理解DNS迭代解析</a></h4>
-                            
-                            <p><time datetime="2020-08-22T16:36:39.000Z"><a href="/2020/08/23/通过dig命令理解DNS迭代解析/">2020-08-23</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2020/08/10/json解析/">解析JSON</a></h4>
-                            
-                            <p><time datetime="2020-08-09T16:00:00.000Z"><a href="/2020/08/10/json解析/">2020-08-10</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2020/08/10/线程与进程 并发与并行/">线程与进程 并发与并行</a></h4>
-                            
-                            <p><time datetime="2020-08-09T16:00:00.000Z"><a href="/2020/08/10/线程与进程 并发与并行/">2020-08-10</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2020/08/08/Try-catch造成死循环(无限递归)的问题/">Try-catch造成死循环(无限递归)的问题</a></h4>
-                            
-                            <p><time datetime="2020-08-07T16:00:00.000Z"><a href="/2020/08/08/Try-catch造成死循环(无限递归)的问题/">2020-08-08</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">
+          2022-03-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/Hexo/'>Hexo</a>
+    
+    
+</span>
+                <h1>Hexo设置永久链接</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>新版本好像集成了插件,</p>
+<p>运行<code>npm install hexo-abbrlink --save</code>提示已安装</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改配置文件_config.yml</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>FALLING INTO A TRANCE</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2022/01/30/getline%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/">
+        std::istream::getline是否线程安全 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
